@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Tasks for category '{{ tasks[0]['category'] }}'</h2>
+    <hr>
+    <br>
+    {% for task in tasks %}
+    <div class="card my-4">
+        <div class="card-body">
+            <h2 class="card-title">{{ task['title'] }}</h2>
+            <p class="card-text">{{ task['description'] }}</p>
+            <p class="card-text">{{ task['created'] }}</p>
+            {% if task['status'] %}
+            <p class="text-success">Done</p>
+            {% else %}
+            <p class="text-danger">In progress</p>
+            {% endif %}
+            <form action="{{ url_for('delete_task', task_id=task['id']) }}" method="POST">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this task?')">Delete task</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}

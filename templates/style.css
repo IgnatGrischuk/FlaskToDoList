@@ -1,0 +1,28 @@
+body {
+    background-color: #F8C291; /* Soft orange color */
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-right: 10px;
+}
